@@ -1,3 +1,6 @@
+
+@import 'https://fonts.googleapis.com/css?family=Roboto';
+
 html {
     box-sizing: border-box;
 }
@@ -7,24 +10,47 @@ html {
 
 body {
     margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    background: #e1e7ed;
+}
+
+.header {
+    background: #FFFFFF;
+    padding: 20px 100px;
+    box-shadow: 0 0 5px #888;
+}
+
+.btn {
+    background: #53b6c2;
+    padding: 20px 50px;
+    border: 0;
+    border-radius: 5px;
+    color: #FFF;
+    text-transform: uppercase;
 }
 
 .controls {
-    padding: 15px;
-    background: #F1F1F1;
-}
-.controls--count {
+    color: #b5bbbc;
     float: right;
+    margin-top: 10px;
 }
+.controls__count {
+    font-size: 2em;
+}
+.controls__matched-count {
+    color: #53b6c2;
+}
+.controls__total-count {
 
+}
 
 .main {
-    padding: 30px;
+    padding: 30px 100px;
 }
 
 .card {
     position: relative;
-    border: 1px solid #CCC;
     width: 100px;
     height: 130px;
     float: left;
@@ -43,12 +69,13 @@ body {
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
+    border-radius: 5px;
 }
 .card__face--back {
-    background: green;
+    background: #58b9c2;
 }
 .card__face--front {
-    background: red;
+    background: #FFFFFF;
     transform: rotateY(180deg);
 }
 
@@ -56,13 +83,11 @@ body {
     top: 5px;
     left: 5px;
     position: absolute;
-    color: #FFF;
 }
 .card__face--front:after {
     bottom: 5px;
     right: 5px;
     position: absolute;
-    color: #FFF;
 }
 
 .card--diamond .card__face--front:before {

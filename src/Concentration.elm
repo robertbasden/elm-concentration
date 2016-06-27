@@ -140,9 +140,16 @@ view model =
         countDisplay = (toString matchedCardCount) ++ "/" ++ (toString totalCardCount)
     in
         div [] [
-            div [class "controls"] [
-                button [onClick NewGame] [text "New Game"]
-                , span [class "controls--count"] [text ("Matched: " ++ countDisplay)]
+            div [class "header"] [
+                button [class "btn", onClick NewGame] [text "New Game"]
+                , span [class "controls"] [
+                    text "Matched: "
+                    , span [class "controls__count"] [
+                        span [class "controls__matched-count"] [text (toString matchedCardCount)]
+                        , text "/"
+                        , span [class "controls__total-count"] [text (toString totalCardCount)]
+                    ]
+                ]
             ]
             , div [class "main"] [
                 div [] (List.map (\(id, card) -> cardView id card) model.cards)
