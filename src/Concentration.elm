@@ -141,9 +141,9 @@ view model =
     in
         div [] [
             div [class "header"] [
-                button [class "btn", onClick NewGame] [text "New Game"]
+                a [class "btn", href "#", onClick NewGame] [text "New Game"]
                 , span [class "controls"] [
-                    text "Matched: "
+                    span [class "controls__label"] [ text "Matched: " ]
                     , span [class "controls__count"] [
                         span [class "controls__matched-count"] [text (toString matchedCardCount)]
                         , text "/"
