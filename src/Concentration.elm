@@ -42,10 +42,14 @@ allTypesMatch list =
 
 generateCards : List (Id, Card)
 generateCards =
-    List.map (\count -> (count, Card False False Diamond)) [1..4] ++
-    List.map (\count -> (count + 4, Card False False Heart)) [1..4] ++
-    List.map (\count -> (count + 8, Card False False Spade)) [1..4] ++
-    List.map (\count -> (count + 12, Card False False Club)) [1..4]
+    List.map (\count -> (count, Card False False Diamond)) [1..2] ++
+    List.map (\count -> (count + 2, Card False False Bulb)) [1..2] ++
+    List.map (\count -> (count + 4, Card False False Umbrella)) [1..2] ++
+    List.map (\count -> (count + 6, Card False False Heart)) [1..2] ++
+    List.map (\count -> (count + 8, Card False False Bell)) [1..2] ++
+    List.map (\count -> (count + 10, Card False False Key)) [1..2] ++
+    List.map (\count -> (count + 12, Card False False Medal)) [1..2] ++
+    List.map (\count -> (count + 14, Card False False Present)) [1..2]
 
 shuffleCards : List (Id, Card) -> List (Id, Card)
 shuffleCards cards =
@@ -66,9 +70,13 @@ init =
 -- UPDATE
 
 type CardType = Diamond
+    | Bulb
+    | Umbrella
     | Heart
-    | Spade
-    | Club
+    | Bell
+    | Key
+    | Medal
+    | Present
 
 type Msg = NewGame
     | FlipCard Id
@@ -121,9 +129,13 @@ cardView id card =
     let
         cardTypeClass = case card.cardType of
             Diamond -> "card--diamond"
+            Bulb -> "card--bulb"
+            Umbrella -> "card--umbrella"
             Heart -> "card--heart"
-            Spade -> "card--spade"
-            Club -> "card--club"
+            Bell -> "card--bell"
+            Key -> "card--key"
+            Medal -> "card--medal"
+            Present -> "card--present"
     in
         div [onClick (FlipCard id), classList [("card", True), ("card--flipped", card.flipped), ("card--matched", card.matched), (cardTypeClass, True)]] [
             div [class "card__face card__face--back"] []

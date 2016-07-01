@@ -91,38 +91,38 @@ body {
 }
 .card__face--front {
     background: #FFFFFF;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 70%;
     transform: rotateY(180deg);
 }
 
-.card__face--front:before {
-    top: 5px;
-    left: 5px;
-    position: absolute;
-    color: #58b9c2;
+.card--diamond .card__face--front {
+    background-image: url(../svg/diamond.svg);
 }
-.card__face--front:after {
-    bottom: 5px;
-    right: 5px;
-    position: absolute;
-    color: #58b9c2;
+.card--bulb .card__face--front {
+    background-image: url(../svg/bulb.svg);
 }
-
-.card--diamond .card__face--front:before {
-    content: "Diamond";
+.card--umbrella .card__face--front {
+    background-image: url(../svg/umbrella.svg);
 }
-.card--heart .card__face--front:before {
-    content: "Heart";
+.card--heart .card__face--front  {
+    background-image: url(../svg/heart.svg);
 }
-.card--spade .card__face--front:before {
-    content: "Spade";
+.card--bell .card__face--front {
+    background-image: url(../svg/bell.svg);
 }
-.card--club .card__face--front:before  {
-    content: "Club";
+.card--key .card__face--front {
+    background-image: url(../svg/key.svg);
+}
+.card--medal .card__face--front {
+    background-image: url(../svg/medal.svg);
+}
+.card--present .card__face--front  {
+    background-image: url(../svg/present.svg);
 }
 
 .card--flipped {
     transform: rotateY(180deg);
 }
-.card--matched .card__face--front:after {
-    content: "✔";
-}
+
