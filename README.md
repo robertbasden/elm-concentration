@@ -1,6 +1,6 @@
 # Concentration (Pairs) in Elm
 
-Simple pairs matching game
+Simple pairs matching game - [demo](https://robertbasden.github.io/elm-concentration/)
 
 ## Build Instructions
 
